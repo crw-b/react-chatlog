@@ -8,6 +8,14 @@ button {
 	outline: inherit;
 }
 
+.liked {
+  content: '❤️';
+}
+
+span {
+  visibility: hidden;
+}
+
 .chat-entry {
   margin: 1rem;
 }

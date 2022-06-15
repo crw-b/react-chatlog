@@ -1,6 +1,8 @@
 import React from 'react';
 import ChatEntry from './ChatEntry';
 import TimeStamp from './TimeStamp';
+// import { useState } from 'react';
+import './ChatLog.css';
 
 const ChatLog = (props) => {
     const chatComponents = props.entries.map(chat => {
@@ -10,7 +12,7 @@ const ChatLog = (props) => {
     });
 
     return (
-        <section>
+        <section className='chat-log'>
             {chatComponents}
         </section>
     )
