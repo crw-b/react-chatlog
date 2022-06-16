@@ -7,7 +7,7 @@ import './ChatLog.css';
 const ChatLog = (props) => {
     const chatComponents = props.entries.map(chat => {
         return(
-            <ChatEntry sender={chat.sender} body={chat.body} timeStamp={chat.timeStamp}></ChatEntry>
+            <ChatEntry sender={chat.sender} body={chat.body} timeStamp={chat.timeStamp} liked={chat.liked}></ChatEntry>
         );
     });
 

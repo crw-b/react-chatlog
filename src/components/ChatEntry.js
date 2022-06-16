@@ -4,20 +4,20 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = (props) => {
-  const [isLiked, setLiked] = useState(false);
+const ChatEntry = ({sender, body, timeStamp, liked}) => {
+  const [isLiked, setLiked] = useState(liked);
   const toggleLiked = () => {
     setLiked(!isLiked);
   };
-  const liked = isLiked ? '❤️' : '🤍';
+  const heart = isLiked ? '❤️' : '🤍';
 
   return (
     <div className="chat-entry local">
-      <h2 className="entry-name">{props.sender}</h2>
+      <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
-        <p className="entry-time"><TimeStamp time={props.timeStamp}></TimeStamp></p>
-        <button onClick={toggleLiked}>{liked}</button>
+        <p>{body}</p>
+        <p className="entry-time"><TimeStamp time={timeStamp}></TimeStamp></p>
+        <button onClick={toggleLiked}>{heart}</button>
       </section>
     </div>
   );
