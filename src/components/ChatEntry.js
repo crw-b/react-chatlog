@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
+  const [likesCount, countLikes] = useState(0);
+  useEffect(() => {}, [likesCount])
 
   const onHeartButtonClick = () => {
     const updatedEntry = {
@@ -24,7 +26,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}></TimeStamp></p>
-        <button onClick={onHeartButtonClick}>{heart}</button>
+        <button className="like" onClick={onHeartButtonClick}>{heart}</button>
       </section>
     </div>
   );
