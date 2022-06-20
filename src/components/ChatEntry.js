@@ -5,7 +5,7 @@ import { useState } from 'react';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
-  const [likesCount, countLikes] = useState(0);
+  const likesCount = useState(0);
   useEffect(() => {}, [likesCount])
 
   const onHeartButtonClick = () => {
@@ -19,9 +19,10 @@ const ChatEntry = (props) => {
     props.onUpdate(updatedEntry);
   }
   const heart = props.liked ? '❤️' : '🤍';
+  const senderClass = props.sender === 'Estragon' ? 'remote' : 'local';
 
   return (
-    <div className="chat-entry local">
+    <div className={`chat-entry ${senderClass}`}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
