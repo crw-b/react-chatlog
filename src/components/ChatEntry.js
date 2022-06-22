@@ -19,10 +19,11 @@ const ChatEntry = (props) => {
     props.onUpdate(updatedEntry);
   }
   const heart = props.liked ? '❤️' : '🤍';
-  const senderClass = props.sender === 'Estragon' ? 'remote' : 'local';
+  const senderClass = props.sender === 'Vladimir' ? 'local' : 'remote';
+  const colorClass = props.sender === 'Vladimir' ? props.localColor : props.remoteColor;
 
   return (
-    <div className={`chat-entry ${senderClass}`}>
+    <div className={`chat-entry ${senderClass} ${colorClass}`}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>

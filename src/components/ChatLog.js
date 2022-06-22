@@ -13,6 +13,8 @@ const ChatLog = (props) => {
             timeStamp={chat.timeStamp} 
             liked={chat.liked}
             onUpdate={props.onUpdateEntry}
+            remoteColor={props.remoteColor}
+            localColor={props.localColor}
             ></ChatEntry>
         );
     });
