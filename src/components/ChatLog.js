@@ -29,10 +29,10 @@ export default ChatLog;
 ChatLog.propTypes = {
     entries: PropTypes.arrayOf(PropTypes.shape({
         sender: PropTypes.string.isRequired,
-        id: PropTypes.number.isRequired,
+        id: PropTypes.number,
         body: PropTypes.string.isRequired,
-        timeStamp: PropTypes.instanceOf(Date).isRequired,
-        liked: PropTypes.bool.isRequired
+        timeStamp: PropTypes.string.isRequired,
+        liked: PropTypes.bool
     })),
-    onUpdateEntry: PropTypes.func.isRequired
+    onUpdateEntry: PropTypes.func
 };
